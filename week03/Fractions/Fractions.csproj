@@ -1,11 +1,63 @@
+<using System;=
 
-<Project Sdk="Microsoft.NET.Sdk">
+public class Fraction
+{
+    private int numerator;
+    private int denominator;
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-  </PropertyGroup>
+    // Default constructor (1/1)
+    public Fraction()
+    {
+        numerator = 1;
+        denominator = 1;
+    }
 
-</Project>
+    // Constructor with only numerator (denominator defaults to 1)
+    public Fraction(int numerator)
+    {
+        this.numerator = numerator;
+        denominator = 1;
+    }
+
+    // Constructor with both numerator and denominator
+    public Fraction(int numerator, int denominator)
+    {
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    // Getter and Setter for Numerator
+    public int GetNumerator()
+    {
+        return numerator;
+    }
+
+    public void SetNumerator(int numerator)
+    {
+        this.numerator = numerator;
+    }
+
+    // Getter and Setter for Denominator
+    public int GetDenominator()
+    {
+        return denominator;
+    }
+
+    public void SetDenominator(int denominator)
+    {
+        this.denominator = denominator;
+    }
+
+    // Method to return fraction as a string
+    public string GetFractionString()
+    {
+        return $"{numerator}/{denominator}";
+    }
+
+    // Method to return decimal representation
+    public double GetDecimalValue()
+    {
+        return (double)numerator / denominator;
+    }
+}
+
